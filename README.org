@@ -1,9 +1,11 @@
-Stop at 2.5.2。因为看不懂了
+编译原理 第三版 练习
 
 * Note
 ** 2.4.5左递归
 expr -> expr + term
 A -> Aa|b
+正则即b+a
+a = term, b = expr
 
 - 第二种转换
 A -> bR
