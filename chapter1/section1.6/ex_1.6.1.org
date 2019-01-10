@@ -1,0 +1,40 @@
+练习1.6.1 对图1-13a中的块结构的C代码，指出赋给w、x、y和z的值
+
+#+BEGIN_SRC c
+  int w, x, y, z;
+  int i = 4; int j = 5;
+  {
+      int j = 7;
+      i = 7;
+      w = i + j;
+      //w = 14 and i(global) = 7
+  }
+
+  x = i + j;// make x(global) = 14
+  {
+      int i = 8;
+      y = i + j;
+      // y(global) = 13
+  }
+  z = i + j;// j = 13
+#+END_SRC
+
+#+BEGIN_SRC c
+  int w, x, y ,z;
+  int i = 3; int j = 4;
+  {
+      int i = 5;
+      w = i + j;
+      // w = 9
+  }
+
+  x = i + j;
+  // x = 7
+  {
+      int j = 6;
+      i = 7;
+      y = i + j;
+      // y = 13 and make global i = 7
+  }
+  z = i + j; // z = 11
+#+END_SRC

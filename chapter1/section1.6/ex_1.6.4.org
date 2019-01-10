@@ -1,0 +1,16 @@
+练习1.6.4 下面的C代码的打印结果是什么？
+#+BEGIN_SRC c
+  #include <stdlib.h>
+  #include <stdio.h>
+
+  #define a (x+1)
+  int x = 2;
+  void b() { x = a; printf("%d", x); }
+  void c() { int x = 1; printf("%d", a); }
+
+  int main(int argc, char *argv[]) {
+      b(); c();
+  }
+
+  // the print is 3 2
+#+END_SRC

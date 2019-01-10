@@ -1,0 +1,25 @@
+像HTML或XML之类的标记语言不同于传统的程序设计语言，它们要么包含有很多标点符号（标记），如HTML，要么使用由用户自定义的标记集合，如XML。而且标记还可以带有参数。请指出如何把如下的HTML文档
+#+BEGIN_SRC html
+  Here is a photo of <B>my house</B>;
+  <P><IMG SRC="huorce.gif"><BR>
+  See <A HREF = "morePix.html">More Pictures</A> if you
+  liked that one.<P>
+#+END_SRC
+
+Ans:
+<literal, Here is a photo of>
+<B>
+<literal, my house>
+</B>
+<literal, ;\n>
+<P>
+<IMG>
+<attr, SRC = "house.gif">
+<BR>
+<literal, See>
+<A>
+<attr, HREF="morePix.html">
+<literal, More Pictures>
+</A>
+<literal, if you\nliked that one.>
+<P>

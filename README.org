@@ -1,0 +1,14 @@
+Stop at 2.5.2。因为看不懂了
+
+* Note
+** 2.4.5左递归
+expr -> expr + term
+A -> Aa|b
+
+- 第二种转换
+A -> bR
+R -> aR|E
+
+其中
+b = term
+a = + term  

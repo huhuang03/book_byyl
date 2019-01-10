@@ -1,0 +1,12 @@
+构建一个将罗马数字翻译成整数的语法制导翻译方案。
+
+term -> O			{print '0'}
+term -> I			{print '1'}
+term -> II			{print '2'}
+term -> III			{print '3'}
+term -> IV			{print '4'}
+term -> V			{print '5'}
+term -> VI			{print '6'}
+term -> VII			{print '7'}
+term -> VIII		{print '8'}
+term -> IX			{print '9'}

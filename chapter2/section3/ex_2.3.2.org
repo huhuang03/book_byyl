@@ -1,0 +1,39 @@
+练习2.3.2 构建一个语法制导翻译方案，该方案将算术表达式从后缀表示方式翻译成中缀表示方式。给出输入95-2*和952*-的注释分析树。
+
+term -> 0		{print '0'}
+term -> 1		{print '1'}
+term -> 2		{print '2'}
+term -> 3		{print '3'}
+term -> 4		{print '4'}
+term -> 5		{print '5'}
+term -> 6		{print '6'}
+term -> 7		{print '7'}
+term -> 8		{print '8'}
+term -> 9		{print '9'}
+expr -> term
+expr -> expr1 {print '-'} term -
+expr -> expr2 {print '+'} term +
+
++ 95-2* (9-5)*2
+
+expr.t = 9-5*2
+	expr.t = 9-5
+    	expr.t = 9
+		term.t = 9
+        -
+        term.t = 5
+    *
+    term.t = 2
+
+    
++ 952*- 9-(5 * 2)
+
+expr.t 9-5*2
+	expr.t = 9
+		term.t = 9
+	-
+	expr.t 5*2
+		expr.t = 5
+        	term.t = 5
+        *
+        term.t = 2

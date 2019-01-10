@@ -1,0 +1,15 @@
+练习2.3.1 构建一个语法制导翻译方案，该方案把算术表达式从后缀表示方法翻译成前缀表达方式。
+
+term -> 0		{print '0'}
+term -> 1		{print '1'}
+term -> 2		{print '2'}
+term -> 3		{print '3'}
+term -> 4		{print '4'}
+term -> 5		{print '5'}
+term -> 6		{print '6'}
+term -> 7		{print '7'}
+term -> 8		{print '8'}
+term -> 9		{print '9'}
+expr -> term
+expr -> {print '-'} expr1 term -
+expr -> {print '+'} expr2 term +

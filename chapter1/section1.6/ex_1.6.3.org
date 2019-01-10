@@ -1,0 +1,34 @@
+对于图1-14的块结构代码，假设使常见的声明的静态作用域规则，给出其中12个声明的每一个作用域
+#+BEGIN_SRC c
+  {
+      int w, x, y, z;/* Block B1 */
+      {
+          int x,z;/* Block B2 */
+          {
+              int w, x;/* Block B3 */
+          }
+      }
+      {
+          int w, x;/* Block B4 */
+          {
+              int y, z;/* Block B5 */
+          }
+      }
+  }
+#+END_SRC
+
+Ans:
+|      | B1 | B2 | B3 | B4 | B5 |
+|------+----+----+----+----+----|
+| B1.w | Y  | Y  | N  | N  | N  |
+| B1.x | Y  | N  | N  | N  | N  |
+| B1.y | Y  | Y  | Y  | Y  | N  |
+| B1.z | Y  | N  | N  | N  | Y  |
+| B2.x | N  | Y  | N  | N  | N  |
+| B2.z | N  | Y  | Y  | N  | N  |
+| B3.w | N  | N  | Y  | N  | N  |
+| B3.x | N  | N  | Y  | N  | N  |
+| B4.w | N  | N  | N  | Y  | Y  |
+| B4.x | N  | N  | N  | Y  | Y  |
+| B5.y | N  | N  | N  | N  | Y  |
+| B5.z | N  | N  | N  | N  | Y  |

@@ -1,0 +1,20 @@
+练习3.3.1: 对于下列各个语言，查询语言使用手册以确定：
+I） 形成各语言的输入字母表的字符集分别是什么（不包括那些只能出现在字符串或注释中的字符）？
+II） 各语言的数字常量的词法形式是什么？
+III） 各语言的标识符的词法形式是什么
+
+1) C, 2) C++,  3) C#,  4) Fortran,  5) Java,  6) Lisp,  7) SQL
+
+
+Answer:
+|         | I                    | II                              | III                                |
+| C       | {leter_digit\t\s><=} | digits(.digits)*(E[+-]?digits)? | letter(_ or letter or digits)*     |
+| C++     | {leter_digit\t\s><=} | digits(.digits)*(E[+-]?digits)? | letter(_ or letter or digits)*     |
+| C#      | {leter_digit\t\s><=} | digits(.digits)*(E[+-]?digits)? | letter(_ or letter or digits)*     |
+| FOrtran | {leter_digit\t\s><=} | digits(.digits)*(E[+-]?digits)? | letter(_ or letter or digits)*     |
+| C#      | {leter_digit\t\s><=} | digits(.digits)*(E[+-]?digits)? | letter(_ or letter or digits)*     |
+| Fortran | {leter_digit\t\s><=} | digits(.digits)*(E[+-]?digits)? | letter( or _ or letter or digits)* |
+| Java    | {leter_digit\t\s><=} | digits(.digits)*(E[+-]?digits)? | letter(_ or letter or digits)*     |
+| Lisp    | {leter_digit\t\s><=} | digits(.digits)*(E[+-]?digits)? | letter(_ or letter or digits)*     |
+| SQL     | {leter_digit\t\s><=} | digits(.digits)*                | letter(_ or letter or digits)*     |
+

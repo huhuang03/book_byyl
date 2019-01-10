@@ -1,0 +1,34 @@
+* 语法推导
+program		->		bolck
+block		->		'{' decls stmts '}'
+
+decls		->		decls decl | E
+del			->		type id;
+
+stmts		->		stmts stmt | E
+stmt		->		block | factor;
+factor		->		id
+
+* 为表达式和语句构造抽象的语法数
+  在其中x.n表示对应的抽象书的节点
+  | program | block                 | return block.n;                     |
+  | block   | {stmts}               | block.n = stmts.n;                  |
+  | stmts   | stmts stmt            | stmts.n = new Seq(stmts.n, stmt.n); |
+  |         | E                     | stmts.n = null;                     |
+  | stmt    | expr;                 | n = new Eval(expr.n);               |
+  |         | if (expr) stmt        | n = new If(expr.n, stmt.n);         |
+  |         | while (expr) stmt     | n = new While(expr.n, stmt.n);      |
+  |         | do stmt while (expr); | n = new Do(stmt.n, expr.n);         |
+  |         | block                 | n = block.n;                        |
+  | expr    | rel = expr            | n = new Assign('=', rel.n, expr.n); |
+  |         | rel                   | n = real.n;                         |
+  | rel     | rel < add             | n = new Rel('<', rel.n, add.n);     |
+  |         | rel <= add            | n = new Rel('<=', rel.n, add.n);    |
+  |         | add                   | n = add.n;                          |
+  | add     | add + term            | n = new Op('+', add.n, term.n)      |
+  |         | term                  | n = term.n                          |
+  | term    | term * factor         | n = new Op('*', term.n, factor.n)   |
+  |         | factor                | n = factor.n;                       |
+  | factor  | (expr)                | n = expr.n;                         |
+  |         | num                   | n = new Num(num.value);             |
+

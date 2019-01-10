@@ -1,0 +1,14 @@
+练习3.3.2: 试描述下列正则表达式定义的语言：
+1) a（a|b）*a
+2) ((E|a)*)*
+3) (a|b)*a(a|b)(a|b)
+4) a*ba*ba*ba*
+5) (aa|bb)*((ab|ba)(aa|bb)*(ab|ba)*(aa|bb)*)*
+   
+Answer:
+1) a b 中间任意个a或b
+2) a*
+3) 任意个a或b a a或者b a或者b
+4) 任意个a b任意个a b 任意个a b 任意个a
+5) 任意个aa或bb 任意个{ab或ba 任意个aa或bb 任意个ab或ba 任意个aa或bb}
+   

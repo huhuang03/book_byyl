@@ -1,0 +1,69 @@
+为下面文法构造递归下降语法分析器：
+1) S -> +SS|-SS|a
+2) S -> S(S)S|E
+3) S -> 0S1|01
+
+1)
+#+BEGIN_SRC c
+void stmt() {
+	switch(lookahead) {
+    	case '+':
+        	match('+');
+            stmt();
+            stmt();
+        case '-':
+        	match('-');
+            stmt();
+            stmt();
+        case 'a':
+        	match('a');
+        default:
+        	error("syntax error");
+    }
+}
+
+void match(terminal t) {
+	if (lookahead == t) lookahead = nextTerminal();
+    else report("syntax error");
+}
+#+END_SRC
+
+2)
+#+BEGIN_SRC c
+void stmt() {
+	switch(lookahead) {
+    	case '(':
+        	stmt();
+            match(')');
+        default:
+			report("syntax error");
+    }
+}
+
+void 
+
+void match(terminal t) {
+	if (lookahead == t) lookahead = nextTerminal();
+    else report("syntax error");
+}
+#+END_SRC
+
+3)
+#+BEGIN_SRC c
+void stmt() {
+	switch(lookahead) {
+    case '0':
+        optstmt();
+        match('1');
+    }
+}
+
+void optstmt() {
+	if (lookahead == '0') stmt();
+}
+
+void match(terminal t) {
+	if (lookahead == t) lookahead = nextTerminal();
+    else report("syntax error");
+}
+#+END_SRC

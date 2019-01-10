@@ -1,0 +1,25 @@
+练习2.3.1 构建一个语法制导翻译方案，该方案把算术表达式从中缀表示方法翻译成运算符在运算分量之前的前缀表达方式。例如，-xy是表达式x-y的前缀表示法。给出9-5+2和9-2*2的注释分析树。
+
+term -> 0		{print '0'}
+term -> 1		{print '1'}
+term -> 2		{print '2'}
+term -> 3		{print '3'}
+term -> 4		{print '4'}
+term -> 5		{print '5'}
+term -> 6		{print '6'}
+term -> 7		{print '7'}
+term -> 8		{print '8'}
+term -> 9		{print '9'}
+expr -> term
+expr -> {print '-'} expr1 - term
+expr -> {print '+'} expr2 + term
+
+expr.t = +-952
+	expr.t = -95
+    	extr.t = 9
+        	term.t = 9
+        -
+        term.t = 5
+    +
+    term.t = 2
+    
